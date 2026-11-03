@@ -22,12 +22,12 @@ jobs:
       - name: Check required files and title tag
         run: |
           for f in index.html style.css script.js; do
-            [ -f "$f" ] || { echo "❌ Thiếu file: $f"; exit 1; }
-            echo "✅ Có file: $f"
+            [ -f "$f" ] || { echo "Thiếu file: $f"; exit 1; }
+            echo "Có file: $f"
           done
           grep -qiE '<title>[^<]+</title>' index.html \
-            || { echo "❌ index.html thiếu thẻ <title>"; exit 1; }
-          echo "✅ index.html có thẻ <title>"
+            || { echo "index.html thiếu thẻ <title>"; exit 1; }
+          echo "index.html có thẻ <title>"
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
